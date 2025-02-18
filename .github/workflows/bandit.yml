@@ -34,9 +34,9 @@ jobs:
         run: |
           bandit -r . -f json -o bandit_report.json
 
-      # Загружаем отчет в артефакты GitHub Actions
+      # Загружаем отчет в артефакты GitHub Actions (используем новую версию)
       - name: Upload Bandit report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: bandit-report
           path: bandit_report.json
